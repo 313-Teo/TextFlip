@@ -1,0 +1,91 @@
+
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Flip your text. Flip everything you write with Unicode. SOAP POWER!">
+<title>I'm flipping your mother</title>
+<style type="text/css">
+h1 {
+  color: rgb(60, 60, 60);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 300%;
+  background-color:rgb(255, 255, 255);
+}
+p {
+  color: rgb(60, 60, 60);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 110%;
+  background-color:rgb(255, 255, 255);
+}
+textarea { font-family: "Arial Unicode MS", Batang }
+h1 { margin-bottom: 2px;}
+</style>
+<script>
+function flip() {
+ var result = flipString(document.f.original.value.toLowerCase());
+ document.f.flipped.value = result;
+}
+
+function flipString(aString) {
+ var last = aString.length - 1;
+ var result = new Array(aString.length)
+ for (var i = last; i >= 0; --i) {
+  var c = aString.charAt(i)
+  var r = flipTable[c]
+  result[last - i] = r ? r : c
+ }
+ return result.join('')
+}
+
+var flipTable = {
+a : '\u0250',
+b : 'q',
+c : '\u0254',
+d : 'p',
+e : '\u01DD',
+f : '\u025F',
+g : '\u0183',
+h : '\u0265',
+i : '\u0131',
+j : '\u027E',
+k : '\u029E',
+//l : '\u0283',
+m : '\u026F',
+n : 'u',
+r : '\u0279',
+t : '\u0287',
+v : '\u028C',
+w : '\u028D',
+y : '\u028E',
+'.' : '\u02D9',
+'[' : ']',
+'(' : ')',
+'{' : '}',
+'?' : '\u00BF',
+'!' : '\u00A1',
+"\'" : ',',
+'<' : '>',
+'_' : '\u203E',
+'\u203F' : '\u2040',
+'\u2045' : '\u2046',
+'\u2234' : '\u2235',
+'\r' : '\n'
+}
+
+for (i in flipTable) {
+  flipTable[flipTable[i]] = i
+}
+</script></head><body style="background-color:rgb(240, 240, 240)"><center> 
+<h1 style="border: 4px solid rgb(180, 180, 180); display: inline-block; padding:10px;">TextFlip</h1>
+<p> </p>
+<p style="border: 4px solid rgb(180, 180, 180); display: inline-block; padding:10px; font-size: 130%;">by CTRL-soap </p>
+<h1> </h1>
+<form name="f"><p style="border: 2px solid rgb(100, 100, 100); display: inline-block; padding:10px;">Original:</p>
+<br>
+<textarea rows="6" cols="50" name="original"  onkeyup="flip()"></textarea> 
+<br>
+<h1> </h1>
+<p style="border: 2px solid rgb(100, 100, 100); display: inline-block; padding:10px;">Flipped:</p>
+<br>
+<textarea rows="6" cols="50" name="flipped"></textarea>
+</form>
+</center></body></html>
