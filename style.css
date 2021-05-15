@@ -1,0 +1,23 @@
+body{background: rgb(24, 188, 156)}
+
+.header{background: rgb(44, 62, 80)}
+.header__logo{color: #fff; float:left; display: block; padding:30px; text-decoration: none; font-family:courier,arial,helvetica;}
+.header__tag{color: #fff; float:left; display: block; padding:30px; text-decoration: none; font-family:courier,arial,helvetica;}
+.header__text a:hover{background: rgb(31, 51, 71);}
+
+
+
+
+
+
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+  * html .clearfix             { zoom: 1; } /* IE6 */
+  *:first-child+html .clearfix { zoom: 1; } /* IE7 */
